@@ -64,7 +64,4 @@ lo que hay ocasiones en las que esta funcionaría pero si en la palabra hay letr
 que se repiten, al estar comparndo las letras y no sus direcciones abria veces en las
 que no se realiza un cambio ya que el bucle acabaria antes de tiempo.
 
- */
-//Durante el ciclo de intercambio (swap), la condición de parada es while (inicio < fin). 
-//Explica detalladamente qué es lo que se está comparando físicamente en esa instrucción (¿valores o direcciones?) 
-// y qué sucedería si la condición fuera while (*inicio != *fin).
+
