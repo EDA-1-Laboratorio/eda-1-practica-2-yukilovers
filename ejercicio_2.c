@@ -37,13 +37,17 @@ int main() {
         int *actual = (ptr + i);
         
         // --- TU CÓDIGO AQUÍ ---
-        // Caso A: Si *actual es mayor que *max1...
-        //         max2 toma el valor de max1, y max1 apunta al actual.
-        // Caso B: Si *actual es mayor que *max2 (pero menor que max1)...
-        //         max2 apunta al actual.
+    if (*actual>*max1) {   // Caso A: Si *actual es mayor que *max1...
+    max2=max1;    //         max2 toma el valor de max1, y max1 apunta al actual.
+    max1=actual;
+    }
+    else { 
+        if ((*actual>*max2)&&(*actual<*max1)){    // Caso B: Si *actual es mayor que *max2 (pero menor que max1)...
+    max2=actual;    //         max2 apunta al actual.
         // -----------------------
     }
-
+    }
+    }
     // 3. Cálculo de distancia
     // La resta de apuntadores da la distancia en número de elementos
     long distancia = (max1 > max2) ? (max1 - max2) : (max2 - max1);
@@ -56,7 +60,10 @@ int main() {
 
     return 0;
 }
-
 // PREGUNTA: Si el max1 se encuentra en la dirección 0x100 y el max2 en la 0x108,
 // y estamos trabajando con enteros (int) de 4 bytes, 
 // ¿qué valor numérico devolverá la operación max2 - max1 y por qué no devuelve simplemente 8?
+//Respuesta:La operación max2 - max1 devolverá 2.
+//Aunque la diferencia entre las direcciones es de 8 bytes (0x108 - 0x100 = 8), cuando se restan //punteros en C no se obtiene la diferencia en bytes, sino la cantidad de elementos del tipo al que //apuntan.
+//Como cada int ocupa 4 bytes, el programa divide esos 8 bytes entre 4: 8 ÷ 4 = 2
+//Por eso devuelve 2, porque está contando cuántos enteros hay entre esas dos posiciones, no //cuántos bytes.
