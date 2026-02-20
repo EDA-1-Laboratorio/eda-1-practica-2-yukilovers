@@ -6,7 +6,6 @@ el uso de índices del arreglo de entrada.
 */
 
 #include <stdio.h>
-
 void invertirCadena(char *inicio) {
     char *fin = inicio;
     char aux;
@@ -17,7 +16,7 @@ void invertirCadena(char *inicio) {
     fin--; 
 
     // 2. Intercambio de valores
-    while (*inicio != *fin) {
+    while (inicio<fin) {
         // Guardamos el carácter de la izquierda en la caja temporal
         aux = *inicio; 
         
