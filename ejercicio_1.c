@@ -6,6 +6,7 @@ el uso de índices del arreglo de entrada.
 */
 
 #include <stdio.h>
+
 void invertirCadena(char *inicio) {
     char *fin = inicio;
     char aux;
@@ -36,14 +37,12 @@ int main() {
     char palabra[100];
     printf("Digita la palabra que deseas invertir: ");
     scanf("%s",palabra);
-    int lon=strlen(palabra);
 
     printf("Original: %s\n", palabra);
     invertirCadena(palabra);
     printf("Invertida: %s\n", palabra);
     return 0;
 }
-
 /*Durante el ciclo de intercambio (swap), la condición de parada es while (inicio < fin). 
 Explica detalladamente qué es lo que se está comparando físicamente en esa instrucción 
 (¿valores o direcciones?)
